@@ -1,13 +1,11 @@
 package set02;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-/** An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
- * typically using all the original letters exactly once.[1] For example,
- * the word anagram itself can be rearranged into nag a ram, also the word binary into brainy and the word adobe into abode. */
+import java.util.Arrays;
+
+/** An anagram
+ * is a word or phrase formed by rearranging the letters of a different word or phrase,
+ * typically using all the original letters exactly once. */
 
 public class QTwo {
     public static void main(String[] args) {
@@ -20,18 +18,18 @@ public class QTwo {
 
     static boolean checkAnagram(String first, String second) {
 
-        boolean condition = false;
+        boolean condition;
 
-        if(first.length() == second.length()) {
+        char[] fst = first.toCharArray();
+        char[] scd = second.toCharArray();
 
-            List<String> fst = List.of(first);
-            List<String> scd = List.of(second);
+        Arrays.sort(fst);
+        Arrays.sort(scd);
 
-            for (String n : fst) {
-                condition = !scd.contains(n);
-            }
-        }
+        condition = Arrays.equals(fst, scd);
+
         return condition;
+
     }
 
 }
