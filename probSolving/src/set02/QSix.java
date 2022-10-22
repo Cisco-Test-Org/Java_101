@@ -2,7 +2,9 @@ package set02;
 
 import java.util.Arrays;
 
-/** Anagrams */
+/** Anagrams
+ * Two words are anagrams if they contain the same letters but in a different order.
+ * */
 
 public class QSix {
 
